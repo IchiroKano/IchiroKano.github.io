@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Materiallize Sample</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+<header>
+  <nav class="cyan darken-1" role="navigation">
+
+    <!-- nav-wrapperを指定する -->
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#index-banner" class="brand-logo text-white">KANO TRIAL</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#about" title="about">About Me</a></li>
+        <li><a href="#Correction">Correction</a></li>
+        <li><a href="#Sample" title="links">Sample</a></li>
+        <li><a href="#Email">Email Me</a></li>
+      </ul>
+      <!-- スマホ用ナビメニューアイコン -->
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</header>
+
+<!-- スマホ用ナビ -->
+<ul id="nav-mobile" class="side-nav">
+  <li><a href="#about" title="about">About Me</a></li>
+  <li><a href="#Correction" title="production">Correction</a></li>
+  <li><a href="#Sample" title="links">Sample</a></li>
+  <li><a href="#contact" title="Email">Email Me</a></li>
+</ul>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // sideNavを利用する
+    $('.button-collapse').sideNav();
+  });
+</script>
+
+<div class="row">
+  <!-- cardデザインを適用したいブロックに指定 -->
+  <div class="card blue-grey darken-1 col s12 m6">
+    <!-- card内のコンテンツ -->
+    <div class="card-content white-text">
+      <!-- cardのタイトル -->
+      <span class="card-title">Card って?</span>
+      <p>
+        Cardって何？どんなことができるの？を試してみる。
+      </p>
+      <p id="popup_1">[ここをクリック]</p>
+    </div>
+    <!-- cardの下部に表示される領域 -->
+    <div class="card-action">
+      <a href="https://www.google.co.jp/" title="Google検索" target="_blank">Google</a>
+      <a href="https://github.com/" title="githubへのリンク" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- input-fieldを指定する -->
+  <div class="input-field col s12 m6">
+    <i class="material-icons prefix">account_circle</i>
+    <input id="icon_prefix" type="text" class="validate" value="入力することを試す">
+    <label for="icon_prefix">入力フィールド</label>
+  </div>
+  <div class="input-field col s6">
+    <i class="material-icons prefix">email</i>
+    <input id="icon_email" type="text" class="validate" value="送れないんだけどね。">
+    <label for="icon_email">メール送ってみる？</label>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col s12 m2">
+    <div class="card hoverable medium">
+      <div class="card-image">
+        <img class="activator" src="http://www.asahi-net.or.jp/~cb9i-kn/img/menu_icon_cg.gif">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">CGについて
+          <i class="material-icons right">more_vert</i>
+        </span>
+      </div>
+      <div class="card-action"><a href="#">Link</a></div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">CG<i class="material-icons right">close</i></span>
+        <p>This image copied from funny snowman web site.<a href="#">Link Here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m2">
+    <div class="card hoverable">
+      <div class="card-image">
+        <img class="activator" src="http://www.asahi-net.or.jp/~cb9i-kn/img/menu_aboutme.gif">
+        <span class="card-title">About Me</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content">カードの内容をここに書く。</div>
+      <div class="card-action">Just Try it.</div>
+    </div>
+  </div>
+
+  <div class="col s12 m4">
+    <div class="card hoverable">
+      <div class="card-content">
+        <p>メニュー付きのカード。アイコンその１、その２、その３でカテゴリ分けできるかも</p>
+      </div>
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab"><a href="#icon1">アニメ</a></li>
+          <li class="tab"><a class="active" href="#icon2">動物</a></li>
+          <li class="tab"><a href="#icon3">食べ物</a></li>
+        </ul>
+      </div>
+      <div class="card-content grey lighten-4">
+        <div id="icon1">アニメのアイコン</div>
+        <div id="icon2">動物のアイコン</div>
+        <div id="icon3">食べ物のアイコン１<br>食べ物のアイコン２</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m3">
+    <div class="card-panel teal">
+      <span class="white-text">説明専用のシンプルなカード。Nullのカードにも使えるかな。</span>
+    </div>
+  </div>
+
+</div>
+
+<a class="waves-effect waves-light btn-large">普通のボタン</a>
+<a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>クラウド？</a>
+<a class="waves-effect waves-light btn-large"><i class="material-icons right">cloud</i>雲？</a>
+<a class="btn disabled">押せないボタン</a> 
+
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">いつもありがとう</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            c 2018 Copyright FunnySnowman
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
+<script type="text/javascript">
+
+    // popup_1をクリックしたら、functionの中身を実行
+    var popup_1 = document.getElementById("popup_1");
+
+    popup_1.onclick = function popup1Click() {
+        alert("ポップアップをクリックできた");
+    }
+
+</script>
+
+</body>
+</html>

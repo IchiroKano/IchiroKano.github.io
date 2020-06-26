@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+　　 <title>グラフ書けるかな</title> 
+</head>
+  <body>
+　　　　  <h1>グラフ</h1>
+    <canvas id="myChart"></canvas>
+　　　　　　　　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script>
+    var ctx = document.getElementById("myChart");
+    <!--
+    var myChart = new Chart(ctx, {
+      type: タイプ,
+      data: データ,
+      options: オプション
+    });
+    -->
+
+var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May'],
+        datasets: [
+          {
+            label: 'Overwork hours',
+            data: [38, 82, 55, 36, 51],
+            borderColor: "rgba(255,0,0,1)",
+            BackgroundColor: "rgba(0,0,0,0)"
+          }
+        ]
+      },
+      options:
+    });
+    
+    </script>
+
+  </body>
+</html>

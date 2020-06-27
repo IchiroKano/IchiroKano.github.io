@@ -5,7 +5,7 @@
 　　 <title>グラフ書けるかな</title> 
 </head>
   <body>
-　　<h1>グラフ書けるかな rev 0.7</h1>
+　　<h1>グラフ書けるかな rev 0.8</h1>
     <input type="file" id="file"><br />
     <input type="button" value="グーグルスプレッドシートの値で書き換え" onclick="OnButtonClick();"/><br />
     <input type="button" value="元に戻す" onclick="OnButtonClear();"/><br />
@@ -31,7 +31,8 @@
 			  const jsondata = this.response;
 			  //console.log(jsondata);
 			  const obj = JSON.parse(JSON.stringify(jsondata));
-			  console.log(obj.values[1]);
+			  //console.log(obj.values[1]);
+			  document.getElementById('csvFile').innerHTML = "JSON取得値：" + obj.values;
 
 			  var ctx = document.getElementById("myChart");
 

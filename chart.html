@@ -5,13 +5,13 @@
 　　 <title>グラフ書けるかな</title> 
 </head>
   <body>
-　　<h1>グラフ書けるかな rev 2</h1>
+　　<h1>グラフ書けるかな rev 0.4</h1>
     <input type="file" id="file">
     <input type="button" value="グーグルスプレッドシートの値で書き換え" onclick="OnButtonClick();"/><br />
 	  <script>
 		  // REST-API 呼び出し
 		  var request = new XMLHttpRequest();
-		  request.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1Kp4-ixkRxq2Q8MFQst31UHQ7E0gc-kEFBMKZUK-x6PE/values/overwork!A1:F2?key=AIzaSyCXTE-PBCGICIKz7be6LLusUzQxw06fw1E', true);
+		  request.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1Kp4-ixkRxq2Q8MFQst31UHQ7E0gc-kEFBMKZUK-x6PE/values/overwork!B1:F2?key=AIzaSyCXTE-PBCGICIKz7be6LLusUzQxw06fw1E', true);
 		  request.responseType = 'json';
 
 		  // ボタンが押されたら実行する
@@ -21,9 +21,9 @@
 
 		  // JSONが返ってきたらロードする
 		  request.onload = function() {
-			  var jsondata = this.response;
+			  const jsondata = this.response;
 			  //console.log(jsondata);
-			  const obj = JSON.parse(jsondata);
+			  const obj = JSON.parse(JSON.stringify(jsondata));
 			  console.log(obj.values);
 		  }
 	  </script>

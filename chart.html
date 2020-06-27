@@ -7,7 +7,21 @@
   <body>
 　　<h1>グラフ書けるかな</h1>
     <input type="file" id="file">
+    <input type="button" value="グーグルスプレッドシートの値で書き換え" onclick="OnButtonClick();"/><br />
+	  <script>
+		  var request = new XMLHttpRequest();
+		  request.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1Kp4-ixkRxq2Q8MFQst31UHQ7E0gc-kEFBMKZUK-x6PE/values/overwork!A1:F2?key=AIzaSyCXTE-PBCGICIKz7be6LLusUzQxw06fw1E', true);
+		  request.responseType = 'json';
 
+		  function OnButtonClick() {
+			  request.send();
+		  }
+
+		  request.onload = function() {
+			  var data = this.response;
+			  console.log(data);
+		  }
+	  </script>
 
 	<!-- ファイルを読み込んでHTMLに挿入、中身を表示する -->
 	<div id="csvFile"></div>

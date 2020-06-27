@@ -5,9 +5,11 @@
 　　 <title>グラフ書けるかな</title> 
 </head>
   <body>
-　　<h1>グラフ書けるかな rev 0.6</h1>
-    <input type="file" id="file">
+　　<h1>グラフ書けるかな rev 0.7</h1>
+    <input type="file" id="file"><br />
     <input type="button" value="グーグルスプレッドシートの値で書き換え" onclick="OnButtonClick();"/><br />
+    <input type="button" value="元に戻す" onclick="OnButtonClear();"/><br />
+
 	  <script>
 		  // REST-API 呼び出し
 		  var request = new XMLHttpRequest();
@@ -17,6 +19,11 @@
 		  // ボタンが押されたら実行する
 		  function OnButtonClick() {
 			  request.send();
+		  }
+
+		  // ボタンが押されたら実行する
+		  function OnButtonClear() {
+			  location.reload();
 		  }
 
 		  // JSONが返ってきたらロードする

@@ -6,14 +6,73 @@
 </head>
   <body>
 　　<h1>グラフ書けるかな</h1>
+    <input type="file" id="file">
+
+
+	<!-- ファイルを読み込んでHTMLに挿入、中身を表示する -->
+	<div id="csvFile"></div>
+	<div id="csvArray"></div>
+    <script>
+	let fileInput = document.getElementById('file');
+	let fileReader = new FileReader();
+	var csvText = "";
+	
+	fileInput.onchange = () => {
+	  let file = fileInput.files[0];
+	  fileReader.readAsText(file);
+	};
+	
+	// 画面に表示する
+	//fileReader.onload = () => document.getElementById('csvfile').innerHTML = fileReader.result;
+	fileReader.onload = function() {
+		csvText = fileReader.result;
+		console.log(csvText);
+		document.getElementById('csvFile').innerHTML = "そのまま表示：" + csvText;
+
+		// 配列にセットしよう
+		var tempArray = csvText.split("\n");
+		var csvArray = new Array();
+		for(var i=0; i<tempArray.length; i++) {
+			csvArray[i] = tempArray[i].split(",");
+		}
+		// 配列[][] ２行目の２個めのデータを表示する
+		document.getElementById('csvArray').innerHTML = "配列を表示：" + csvArray[1].slice(1);
+
+    var ctx = document.getElementById("myChart");
+
+	var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May'],
+        datasets: [
+          {
+            label: 'Overwork hours',
+            data: csvArray[1].slice(1),
+            borderColor: "rgba(255,0,0,1)",
+            BackgroundColor: "rgba(0,0,0,0)"
+          }
+        ]
+      }
+    });
+
+	}
+
+    </script>
+
+
+	<br />
+
+	<!-- グラフを描画する（HTML画面） -->
     <div class="Chart-Container" style="position: relative; height: 40vh; width:80vw">
     <canvas id="myChart"></canvas>
     </div>
+
+	<!-- グラフを描画する（スクリプト） -->
 　　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script>
     var ctx = document.getElementById("myChart");
 
-var myChart = new Chart(ctx, {
+	var myChart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['Jan','Feb','Mar','Apr','May'],
@@ -41,6 +100,7 @@ var myChart = new Chart(ctx, {
     });
     
     </script>
+
 
   </body>
 </html>

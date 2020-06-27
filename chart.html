@@ -5,7 +5,7 @@
 　　 <title>グラフ書けるかな</title> 
 </head>
   <body>
-　　<h1>グラフ書けるかな rev 0.5</h1>
+　　<h1>グラフ書けるかな rev 0.6</h1>
     <input type="file" id="file">
     <input type="button" value="グーグルスプレッドシートの値で書き換え" onclick="OnButtonClick();"/><br />
 	  <script>
@@ -25,6 +25,23 @@
 			  //console.log(jsondata);
 			  const obj = JSON.parse(JSON.stringify(jsondata));
 			  console.log(obj.values[1]);
+
+			  var ctx = document.getElementById("myChart");
+
+			  var myChart = new Chart(ctx, {
+			      type: 'line',
+			      data: {
+			        labels: ['Jan','Feb','Mar','Apr','May'],
+			        datasets: [
+			          {
+			            label: 'Overwork hours',
+			            data: obj.values[1],
+			            borderColor: "rgba(255,0,0,1)",
+			            BackgroundColor: "rgba(0,0,0,0)"
+			          }
+			        ]
+			      }
+			    });			  		  
 		  }
 	  </script>
 

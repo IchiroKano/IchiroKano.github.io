@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 title: トップページに変えてみた（練習githubページ）
-my_number: 8 回目
+my_number: 9 回目
 ---
 <h1>{{"Github Action でのJekyllページ" }}</h1>
 <p>title   : {{ page.title }}</p>
